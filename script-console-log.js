@@ -230,44 +230,5 @@ function createMultiplier(multiplier){
 let doubleMe = createMultiplier(2), tripleMe = createMultiplier(3), quadrupleMe = createMultiplier(4); // associando variável a função, a variável agora é = a função createMultiplier
 document.write("<br>" + doubleMe(100)); // chamando a variável que na vdd é a função e essa função recebe um parametro x.
 
-//////////////////////////////////////////////////// MAP E FILTER 
-//// MUTATING AND RETURNING
 
-// push retorna um novo array e número(qtd de itens no array)
-let pets = [
-   {name: "Thor", species: "dog", age: 15},
-   {name: "Theo", species: "dog", age: 2},
-   {name: "Tobias", species: "dog", age: 4},
-   {name: "BicaMt", species: "bird", age:3},
-   {name: "Fluffly", species: "cat", age: 3},
-   {name: "Miauw", species: "cat", age: 10}
-];
-console.log(pets.push({name:"Xita", species: "bird", age: 7})); // retorna um número(qtd de itens no array)
-
-// RETORNAR SOMENTE OS NOMES DOS PETS
-console.log(pets.map(petsNamesOnly));
-
-function petsNamesOnly(arrPets){
-   return arrPets.name;
-}
-
-// RETORNAR OS QUE SÃO DOGS = COMPARISION FILTER
-petsDogs = pets.filter(dogsOnly);
-function dogsOnly(value){
-   return value.species == "dog";
-}
-console.log(petsDogs);
-
-
-// RETORNAR SOMENTE OS NOMES DOS QUE SÃO ESPÉCIE DOGS
-// Pode juntar filter e map
-let dogsNames = pets.filter(dogsOnly).map(petsNamesOnly);
-console.log(dogsNames);
-
-// RETORNAR SOMENTE OS NOMES DOS DOGS QUE SÃO MENORES QUE 5 ANOS
-function babieDogs(value){
-   return value.age <=5
-}
-babieDogsNames = pets.filter(dogsOnly).filter(babieDogs).map(petsNamesOnly); // 2 filters e um map
-console.log(babieDogsNames);
 
