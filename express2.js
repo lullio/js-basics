@@ -1,20 +1,17 @@
-let express = require('express');
+let express = require('express')
 
 let ourApp = express();
 
-ourApp.get('/', function(req, res){
+ourApp.get("/", function(req, res){
    res.send(`
-      <h1>Welcome to Home Page</h1>
-      <p>What's the color of sky?</p>
+      <h2>HI</h2>
+      <p>what's the color of sky?</p>
       <form action="/answer" method="POST">
-         <input name="colorSky" type="text">
+         <input name="skyColor" type="text">
          <button>ENVIAR</button>
       </form>
    `);
 });
 
-ourApp.post("/answer", function(req, res){
-   req.body.col
-});
-
+ourApp.post()
 ourApp.listen(3000);

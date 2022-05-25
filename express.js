@@ -18,6 +18,7 @@ ourApp.get('/', function (req, res){// 1º url 2º funcao q vai rodar sempre pra
 
 // TESTE PARA ENTENDER GET E POST REQUEST
 // SE VC PREENCHER O FORMULÁRIO E ENVIAR VAI CAIR NO POST, SE VC FOR PRA PÁG INICIAL localhost:3000 e depois colocar /answer na url cai NO GET
+// se receber um post request para página answer
 ourApp.post('/answer', function(req, res){
    // res.send('thank you for submitting the form.');
    if(req.body.skyColor.toUpperCase() == "BLUE"){
