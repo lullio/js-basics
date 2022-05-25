@@ -13,7 +13,16 @@ ourApp.get('/', function (req, res){// 1º url 2º funcao q vai rodar sempre pra
       </form>
    `);
 }) 
-   
+
+// TESTE PARA ENTENDER GET E POST REQUEST
+// SE VC PREENCHER O FORMULÁRIO E ENVIAR VAI CAIR NO POST, SE VC FOR PRA PÁG INICIAL localhost:3000 e depois colocar /answer na url cai NO GET
+ourApp.post('/answer', function(req, res){
+   res.send('thank you for submitting the form.');
+});
+
+ourApp.get('/answer', function(req, res){
+   res.send('heyyy');
+});
 
 ourApp.listen(3000) // listen incoming request
 
