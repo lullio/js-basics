@@ -12,6 +12,8 @@ let ourApp = http.createServer(function(req, res){
       res.end("home page");
    }else if(req.url == "/about"){
       res.end("about us page"); // resposta que queremos passar
+   }else{
+      res.end("error 404");
    }
 });
 ourApp.listen(3000);
