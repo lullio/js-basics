@@ -2,6 +2,7 @@ let express = require("express"); // vai olhar na pasta node_modules e procurar 
 
 // cria um express server websever
 let ourApp = express();
+ourApp.use(express.urlencoded({extended: false}))
 
 // o que fazer se tiver um GET REQUEST para home page
 ourApp.get('/', function (req, res){// 1º url 2º funcao q vai rodar sempre pra essa url
@@ -17,11 +18,22 @@ ourApp.get('/', function (req, res){// 1º url 2º funcao q vai rodar sempre pra
 // TESTE PARA ENTENDER GET E POST REQUEST
 // SE VC PREENCHER O FORMULÁRIO E ENVIAR VAI CAIR NO POST, SE VC FOR PRA PÁG INICIAL localhost:3000 e depois colocar /answer na url cai NO GET
 ourApp.post('/answer', function(req, res){
-   res.send('thank you for submitting the form.');
+   // res.send('thank you for submitting the form.');
+   if(req.body.skyColor.toUpperCase() == "BLUE"){
+      res.send(`
+         <p>congrats, correct answer</p>
+         <a href="/">back to home page</a>
+      `)
+   }else{
+      res.send(`
+         <p>incorret answer</p>
+         <a href="/">back to home page</a>
+      `)
+   }
 });
 
 ourApp.get('/answer', function(req, res){
-   res.send('heyyy');
+   res.send('heyyy get request');
 });
 
 ourApp.listen(3000) // listen incoming request
