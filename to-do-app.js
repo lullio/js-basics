@@ -10,9 +10,6 @@ form.addEventListener("submit", (event) => {
 });
 
 function criarItem(valor){
-
-
-
    listItens.insertAdjacentHTML("beforeend", `<li>${valor} <button id="btn" onclick="removerItem(this)">Remover</button></li>`);
    input.value = ""; // zerar input após envio
    input.focus(); // dar foco no input dnv
@@ -23,12 +20,8 @@ function removerItem(qualBotaoVaiRemover){
 }
 
 
-
+// ñ tem nd haver
 var output = [], n, padded;
-
-
-
-
 for (n=0; n<=9999; n++) {
     padded = ('000'+n).slice(-4); // Prefix three zeros, and get the last 4 chars
     output.push(padded);

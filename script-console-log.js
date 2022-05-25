@@ -296,3 +296,42 @@ console.log("in the global scope: ", myName)
 // CASO QUEIRA SOBRESCREVER A VARIÁVEL myName basta vc colocar `myName = "novo nome"` sem colocar o `let`
 
 // CONTEXT = OBJECTS
+
+
+// MAP E FILTER
+let alunos = [
+   {
+      name: Blob,
+      age: 22
+
+   },
+   {
+      name: Julia,
+      age: 15,
+      comidaFavorita: [
+         {
+            name: Mellon,
+            type: Fruit,
+            color: green
+         },
+         {
+            name: Banana,
+            type: fruit,
+            color: yellow
+         }
+      ],
+      gritar: () =>{
+      
+      }
+   },
+   
+];
+
+let alunosNome = alunos.map(function(value, i, arr){
+   return value.name;
+});
+
+let alunosMaioresIdade = alunos.filter(function(value, i , arr){
+   return value.age > 18;
+});
+
