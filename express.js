@@ -2,6 +2,7 @@ let express = require("express"); // vai olhar na pasta node_modules e procurar 
 
 // cria um express server websever
 let ourApp = express();
+// Por padrão o express ñ adicionar o user input no body object do req object, para o código (req.body.skyColor) funcionar, precisa do código abaixo
 ourApp.use(express.urlencoded({extended: false}))
 
 // o que fazer se tiver um GET REQUEST para home page
