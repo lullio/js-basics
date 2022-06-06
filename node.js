@@ -16,4 +16,10 @@ let ourApp = http.createServer(function(req, res){
       res.end("error 404");
    }
 });
-ourApp.listen(3000);
+ourApp.listen(5000);
+
+
+let str = "Oi felipe. vc ta bem. ok. aass..sas.";
+let arr1 = str.split('.');
+console.log(arr1.filter(texto => texto !== '').map(text => text.trim()).map(text => text).map(text => text + " ").join("\n"));
+
